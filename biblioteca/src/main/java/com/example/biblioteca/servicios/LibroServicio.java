@@ -29,7 +29,7 @@ public class LibroServicio {
     private EditorialRepositorio editorialRepositorio;
 
     @Transactional
-    public void crearLibro(Long isbn, String titulo, Integer ejemplares, String idAutor, String idEditorial) throws MiException{
+    public void crearLibro(Long isbn, String titulo, Integer ejemplares, String idAutor, String idEditorial) throws MiException {
 
         validar(isbn, titulo, ejemplares, idAutor, idEditorial);
         
@@ -82,8 +82,8 @@ public class LibroServicio {
             libroRepositorio.save(libro);
         }
     }
-
-    private void validar(Long isbn, String titulo, Integer ejemplares, String idAutor, String idEditorial) throws MiException {
+    
+    private void validar(Long isbn, String titulo, Integer ejemplares, String idAutor, String idEditorial) throws MiException{
         if (isbn == null) {
             throw new MiException("el isbn no puede ser nulo");
         }

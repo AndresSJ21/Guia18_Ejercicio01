@@ -28,22 +28,22 @@
             <div>
                 <br /><br />
                 <label for="Cargar_Libro">Cargar Libro</label><br /><br />
-                <input type="text" placeholder="ISBN" /><br /><br />
-                <input type="text" placeholder="Título del Libro" /><br /><br />
-                <input type="number" placeholder="Cantidad de Ejemplares" /><br /><br />
+                <input type="text" name="isbn" placeholder="ISBN" /><br /><br />
+                <input type="text" name="titulo" placeholder="Título del Libro" /><br /><br />
+                <input type="number" name="ejemplares" placeholder="Cantidad de Ejemplares" /><br /><br />
             </div>
 
             <div th:if="${error != null}">
-                <div class="cuerpo-advertencia">
+                <div>
                     <h5>ERROR</h5>
-                    <p class="texto-mensaje" th:text="${error}"></p>
+                    <p th:text="${error}"></p>
                 </div>
             </div>
 
             <div th:if="${exito != null}">
-                <div class="cuerpo-advertencia">
+                <div>
                     <h5>EXITO</h5>
-                    <p class="texto-mensaje" th:text="${exito}"></p>
+                    <p th:text="${exito}"></p>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@
                 </select>
 
                 <br /><br />
-                
+
                 <select name="idEditorial" >
                     <option>Seleccionar Editorial</option>
                     <option th:each="editorial : ${editoriales}"
