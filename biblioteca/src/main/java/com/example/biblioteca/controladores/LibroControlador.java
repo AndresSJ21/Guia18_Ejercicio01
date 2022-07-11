@@ -2,13 +2,12 @@ package com.example.biblioteca.controladores;
 
 import com.example.biblioteca.entidades.Autor;
 import com.example.biblioteca.entidades.Editorial;
+import com.example.biblioteca.entidades.Libro;
 import com.example.biblioteca.excepciones.MiException;
 import com.example.biblioteca.servicios.AutorServicio;
 import com.example.biblioteca.servicios.EditorialServicio;
 import com.example.biblioteca.servicios.LibroServicio;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
