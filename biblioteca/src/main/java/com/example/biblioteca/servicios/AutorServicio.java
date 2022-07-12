@@ -47,6 +47,10 @@ public class AutorServicio {
         }
     }
     
+    public Autor getOne(String id){
+        return autorRepositorio.getOne(id);
+    }
+    
     private void validar(String nombre) throws MiException{
         if (nombre.isEmpty() || nombre == null){
             throw new MiException("el nombre no puede ser nulo o estar vacío");

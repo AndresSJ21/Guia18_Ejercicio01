@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>    
         <meta charset="UTF-8">
         <title>Biblioteca</title>
@@ -13,17 +13,17 @@ and open the template in the editor.
     </head>
     <body>
         <header>
-            <div class="container">
+            <div>
                 <h2> Carga el autor aquí! </h2>
             </div>
         </header>
         <div class="container">
             <form action="/autor/registro" method="POST">
-                <div class="form-group"> 
-                    <input type="text" class="form-group" name="nombre" placeholder="Nombre del Autor">
+                <div> 
+                    <input type="text" name="nombre" placeholder="Nombre del Autor">
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary">Subir</button>
+                <button type="submit">Subir</button>
             </form>
         </div>
     </body>

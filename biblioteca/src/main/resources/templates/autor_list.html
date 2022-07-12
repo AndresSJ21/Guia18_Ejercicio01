@@ -4,11 +4,12 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Lista Autores</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" href="listas.css"> -->
     </head>
     <body>
         <div>
@@ -16,11 +17,15 @@ and open the template in the editor.
                 <thead>
                 <th scope="col">Id del Autor</th>
                 <th scope="col">Nombre del Autor</th>
+                <th scope="col">Acciones</th>
                 </thead>
                 <tbody th:each="autor : ${autores}">
                     <tr>
                         <th scope="row" th:text="${autor.id}"></th>
                         <td th:text="${autor.nombre}"></td>
+                        <td>
+                            <a th:href="@{/autor/modificar/__${autor.id}__}">Modificar</a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
