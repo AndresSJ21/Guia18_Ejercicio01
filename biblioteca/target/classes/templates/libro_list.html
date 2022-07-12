@@ -21,8 +21,16 @@ and open the template in the editor.
                         <th scope="col">Autor</th>
                         <th scope="col">Editorial</th>
                     </tr>
-
                 </thead>
+                <tbody th:each="libro : ${libros}">
+                    <tr>
+                        <th scope="row" th:text="${libro.isbn}"></th>
+                        <td th:text="${libro.titulo}"></td>
+                        <td th:text="${libro.ejemplares}"></td>
+                        <td th:text="${libro.autor.nombre}"></td>
+                        <td th:text="${libro.editorial.nombre}"></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </body>

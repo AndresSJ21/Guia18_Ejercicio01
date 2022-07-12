@@ -1,11 +1,14 @@
 package com.example.biblioteca.controladores;
 
+import com.example.biblioteca.entidades.Editorial;
 import com.example.biblioteca.excepciones.MiException;
 import com.example.biblioteca.servicios.EditorialServicio;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,5 +36,12 @@ public class EditorialControlador {
             return "editorial_form.html";
         }
         return "index.html";
+    }
+        @GetMapping("/lista")
+    public String listar(ModelMap modelo) {
+        List<Editorial> editoriales = editorialServicio.listarEditoriales();
+        modelo.addAttribute("editoriales", editoriales);
+
+        return "editorial_list";
     }
 }

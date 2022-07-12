@@ -1,12 +1,15 @@
 package com.example.biblioteca.controladores;
 
+import com.example.biblioteca.entidades.Autor;
 import com.example.biblioteca.excepciones.MiException;
 import com.example.biblioteca.servicios.AutorServicio;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,10 +33,17 @@ public class AutorControlador {
         try {
             autorServicio.crearAutor(nombre);
         } catch (MiException ex) {
-            Logger.getLogger(AutorControlador.class.getName()).log(Level.SEVERE,null, ex);
+            Logger.getLogger(AutorControlador.class.getName()).log(Level.SEVERE, null, ex);
             return "autor_form.html";
         }
         return "index.html";
     }
-    
+
+    @GetMapping("/lista")
+    public String listar(ModelMap modelo) {
+        List<Autor> autores = autorServicio.listarAutores();
+        modelo.addAttribute("autores", autores);
+
+        return "autor_list";
+    }
 }
